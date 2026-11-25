@@ -9,6 +9,9 @@ import os
 
 ENTRY = "wip: broke prod at 3 AM; committing this so future me can blame past me with evidence"
 
+# The bounty caps an entry at 200 characters; refuse to emit anything longer.
+assert 1 <= len(ENTRY) <= 200, "entry must be 1-200 characters"
+
 
 def main() -> None:
     os.makedirs("/output", exist_ok=True)
